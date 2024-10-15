@@ -49,16 +49,16 @@ if __name__ == "__main__":
         'Shakespeare3',
         'Shakespeare4',
         'Shakespeare5',
-        'Christopher_Marlowe',
-        'Ben_Jonson',
-        'Edmund_Spenser',
-        'John_Donne',
-        'Francis_Bacon',
-        'Samuel_Johnson',
-        'Oliver_Goldsmith',
-        'Edmund_Burke',
-        'Edward_Gibbon',
-        'Fanny_Burney'
+        'Early_Christopher_Marlowe',
+        'Early_Ben_Jonson',
+        'Early_Edmund_Spenser',
+        'Early_John_Donne',
+        'Early_Francis_Bacon',
+        'Late_Samuel_Johnson',
+        'Late_Oliver_Goldsmith',
+        'Late_Edmund_Burke',
+        'Late_Edward_Gibbon',
+        'Late_Fanny_Burney'
     ]
 
     # Change working directory to the current .py file
@@ -69,19 +69,12 @@ if __name__ == "__main__":
     output_dir = 'text'
     os.makedirs(output_dir, exist_ok=True)
 
-    # Dictionary to hold the combined text for each author
-    author_texts = {author: "" for author in authors}
-
     # Loop through the URLs and authors, get the text
     for author, url in zip(authors, urls):
         text = get_text_from_url(url)
-        if text:
-            author_texts[author] += f"\n\n{text}\n\n{'='*80}\n\n"
-            print(f"Extracted text for {author}")
 
-    # Save each author's combined works to a single file
-    for author, combined_text in author_texts.items():
+        # Save each author's work as a text file
         output_file = os.path.join(output_dir, f"{author}.txt")
         with open(output_file, 'w', encoding='utf-8') as file:
-            file.write(combined_text)
-        print(f"Saved combined text for {author}")
+            file.write(text)
+        print(f"Saved text by {author}")
