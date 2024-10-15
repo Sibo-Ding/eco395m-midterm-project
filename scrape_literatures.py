@@ -29,7 +29,17 @@ if __name__ == "__main__":
         "https://www.gutenberg.org/cache/epub/1532/pg1532.txt",
         "https://www.gutenberg.org/cache/epub/43440/pg43440.txt",
         "https://www.gutenberg.org/cache/epub/1539/pg1539.txt",
-        "https://www.gutenberg.org/cache/epub/1524/pg1524.txt"
+        "https://www.gutenberg.org/cache/epub/1524/pg1524.txt",
+        "https://www.gutenberg.org/cache/epub/901/pg901.txt",
+        "https://www.gutenberg.org/cache/epub/4081/pg4081.txt",
+        "https://www.gutenberg.org/cache/epub/42607/pg42607.txt",
+        "https://www.gutenberg.org/cache/epub/23772/pg23772.txt",
+        "https://www.gutenberg.org/cache/epub/56463/pg56463.txt",
+        "https://www.gutenberg.org/cache/epub/5429/pg5429.txt",
+        "https://www.gutenberg.org/cache/epub/2667/pg2667.txt",
+        "https://www.gutenberg.org/cache/epub/15198/pg15198.txt",
+        "https://www.gutenberg.org/cache/epub/890/pg890.txt",
+        "https://www.gutenberg.org/cache/epub/6346/pg6346.txt"
     ]
 
     # Authors corresponding to the URLs
@@ -38,7 +48,17 @@ if __name__ == "__main__":
         'Shakespeare2',
         'Shakespeare3',
         'Shakespeare4',
-        'Shakespeare5'
+        'Shakespeare5',
+        'Christopher_Marlowe',
+        'Ben_Jonson',
+        'Edmund_Spenser',
+        'John_Donne',
+        'Francis_Bacon',
+        'Samuel_Johnson',
+        'Oliver_Goldsmith',
+        'Edmund_Burke',
+        'Edward_Gibbon',
+        'Fanny_Burney'
     ]
 
     # Change working directory to the current .py file
@@ -49,12 +69,19 @@ if __name__ == "__main__":
     output_dir = 'text'
     os.makedirs(output_dir, exist_ok=True)
 
+    # Dictionary to hold the combined text for each author
+    author_texts = {author: "" for author in authors}
+
     # Loop through the URLs and authors, get the text
     for author, url in zip(authors, urls):
         text = get_text_from_url(url)
+        if text:
+            author_texts[author] += f"\n\n{text}\n\n{'='*80}\n\n"
+            print(f"Extracted text for {author}")
 
-        # Save each author's work as a text file
+    # Save each author's combined works to a single file
+    for author, combined_text in author_texts.items():
         output_file = os.path.join(output_dir, f"{author}.txt")
         with open(output_file, 'w', encoding='utf-8') as file:
-            file.write(text)
-        print(f"Saved text by {author}")
+            file.write(combined_text)
+        print(f"Saved combined text for {author}")
