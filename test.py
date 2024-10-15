@@ -19,11 +19,15 @@ titles = [
     "HAMLET, PRINCE OF DENMARK."
 ]
 
-# Define the absolute path for the directory
-output_dir = '/home/hcywow/eco395m-midterm-project/shakespeare_works'
+# Define the relative path for the directory
+output_dir = 'shakespeare_works'
+
+# Ensure the current working directory is valid
+current_dir = os.path.dirname(os.path.abspath(__file__))
+output_path = os.path.join(current_dir, output_dir)
 
 # Create a directory to save the works
-os.makedirs(output_dir, exist_ok=True)
+os.makedirs(output_path, exist_ok=True)
 
 # Initialize a variable to hold all texts
 all_texts = ""
@@ -55,7 +59,7 @@ for title, url in zip(titles, plain_text_urls):
         print(f"Extracted text for {title}")
 
 # Save all texts to a single file
-output_file = os.path.join(output_dir, 'shakespeare_works.txt')
+output_file = os.path.join(output_path, 'shakespeare_works.txt')
 with open(output_file, 'w', encoding='utf-8') as file:
     file.write(all_texts)
 print(f"Saved all texts to {output_file}")
