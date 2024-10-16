@@ -1,0 +1,6 @@
+First_Work,Shakespeare1,Shakespeare2,Shakespeare3,Shakespeare4,Shakespeare5
+Shakespeare1,1.0,0.371,0.26,0.386,0.282
+Shakespeare2,0.371,1.0,0.272,0.444,0.35
+Shakespeare3,0.26,0.272,1.0,0.265,0.201
+Shakespeare4,0.386,0.444,0.265,1.0,0.412
+Shakespeare5,0.282,0.35,0.201,0.412,1.0
