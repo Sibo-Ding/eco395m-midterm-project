@@ -1,0 +1,6 @@
+First_Work,Late_Edmund_Burke,Late_Edward_Gibbon,Late_Fanny_Burney,Late_Oliver_Goldsmith,Late_Samuel_Johnson
+Late_Edmund_Burke,1.0,0.525,0.355,0.447,0.373
+Late_Edward_Gibbon,0.525,1.0,0.243,0.337,0.367
+Late_Fanny_Burney,0.355,0.243,1.0,0.543,0.276
+Late_Oliver_Goldsmith,0.447,0.337,0.543,1.0,0.349
+Late_Samuel_Johnson,0.373,0.367,0.276,0.349,1.0

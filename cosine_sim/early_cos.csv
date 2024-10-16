@@ -1,0 +1,6 @@
+First_Work,Early_Ben_Jonson,Early_Christopher_Marlowe,Early_Edmund_Spenser,Early_Francis_Bacon,Early_John_Donne
+Early_Ben_Jonson,1.0,0.175,0.234,0.279,0.217
+Early_Christopher_Marlowe,0.175,1.0,0.21,0.183,0.259
+Early_Edmund_Spenser,0.234,0.21,1.0,0.395,0.477
+Early_Francis_Bacon,0.279,0.183,0.395,1.0,0.448
+Early_John_Donne,0.217,0.259,0.477,0.448,1.0
