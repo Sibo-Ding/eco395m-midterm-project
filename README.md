@@ -25,5 +25,9 @@ Readability scores were also run on the works. These are common metrics used in 
 
 Sentiment scores were calculated using textblob library, works were analyzed by polarity which is the emotional tone measured by values of -1 and 1. Shakespeare was balanced and later works where happier 
 	
+### Limitations of the data
+1. The number of texts is limited. We only scrape 15 works.
+2. We only control the time that works were published. Further research can focus on other aspects (e.g. genres).
 
-
+### Limitations of the analysis
+1. We only use term frequency (Bag-of-Words) to convert textual data to numerical data.  
