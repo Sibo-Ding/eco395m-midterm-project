@@ -19,7 +19,7 @@ for f in os.listdir(os.path.join("words_freq")):
 	file[f[:-4]]=file["count"]/file["count"].sum()
 	file=file[["word",f[:-4]]]
 	df_freq=pd.merge(df_freq,file, on='word', how='outer').fillna(0)
-
+#Save as csv 
 outpath=os.path.join("word_freq_tables", "df_freq.csv")
 df_freq.to_csv(outpath,index=False)
 
@@ -58,7 +58,7 @@ df_shk["Shakespeare"]=df_shk["total"]/df_shk["total"].sum()
 both_periods=pd.merge(df_early[["word","Early"]],df_late[["word","Late"]], on='word', how='outer').fillna(0)
 
 df_freq_periods=pd.merge(both_periods,df_shk[["word","Shakespeare"]], on='word', how='outer').fillna(0)
-
+#Save as csv
 outpath=os.path.join("word_freq_tables", "df_freq_periods.csv")
 df_freq_periods.to_csv(outpath,index=False)
 
