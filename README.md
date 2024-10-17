@@ -6,16 +6,16 @@
 2. Convert texts from the previous step to vectors of word frequency (BoW). Run `code/text_to_num.py`, output 15 csv files in `words_freq`. Each csv is the word frequency of a text.  
 
 3. Reformat the code files via Black command.
-4. Run flesch_kincaid.py: outputs two csv files in flesch-kincaid_results directory with flesch-kincaid analysis for each text, scoring the text by grade level and general readability
-5. Run sentiment.py: uses TextBlob library to analyze the sentiment of each text, scoring each by positive/negative sentiment and subjective/objective focus and outputting to a csv file in sentiment_results directory.
+4. Run `code/flesch_kincaid.py`: outputs two csv files in flesch-kincaid_results directory with flesch-kincaid analysis for each text, scoring the text by grade level and general readability
+5. Run `code/sentiment.py`: uses TextBlob library to analyze the sentiment of each text, scoring each by positive/negative sentiment and subjective/objective focus and outputting to a csv file in `sentiment_results` directory.
 
-4. Run `Vector.py`, Uses each column of dataframe as an array that is compared with cosine similarity. Table are created that make visualizations of scores easier.
+4. Run `code/vector.py`, Uses each column of dataframe as an array that is compared with cosine similarity. Table are created that make visualizations of scores easier.
 
-5. Run `euclidian.py`. Does the same thing as vector above but calculates euclidian distance between columns. 
+5. Run `code/euclidian.py`. Does the same thing as vector above but calculates euclidian distance between columns. 
 
-6. Run `flesch-kincaid` to get the data analyisis that goes to flesch-kincaid  directory. 
+6. Run `code/flesch_kincaid.py` to get the data analyisis that goes to flesch-kincaid  directory. 
 
-7. Run `sentiment` that uses outside package textblob
+7. Run `code/sentiment.py` that uses outside package textblob
 
   The objective of this report was to quantitate differences between English authors and Shakespeare  in different periods of time. 5 authors combined or unique work were chosen from 1500 and 1650, and another group of 5 works were chosen from 1750-1800. The first group included contemporaries of Shakespeare. One of the ideas was to see if Shakespeare was more similar to his own time, or if the influence Shakespeare had made future works similar to his own style. 5 works of Shakespeare were also included. 
 	The works were scrapped from the Guttenberg project and each word was separated and a data frame was created for each work with the unique word and the times it appears in the text. Stop words were removed since they are very common. 
