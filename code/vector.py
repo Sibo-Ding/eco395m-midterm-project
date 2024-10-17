@@ -69,3 +69,8 @@ cosine_comparison_totalvsind=cosine_comparison_totalvsind.pivot(index='Work', co
 
 cosine_comparison_totalvsind.to_csv(os.path.join("cosine_sim", "cosine_comparison_totalvsind.csv"))
 
+
+cosine_comparison_total = cosine_comparison_total.pivot(index="First_Work", columns="Second_Work", values="Cosine_sim")
+
+cosine_comparison_total.to_csv(os.path.join("cosine_sim", "cosine_comparison_total.csv"))
+

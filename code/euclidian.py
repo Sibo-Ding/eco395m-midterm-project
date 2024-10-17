@@ -68,5 +68,14 @@ euc_comparison_totalvsind=euc_comparison_totalvsind.pivot(index='Work', columns=
 
 euc_comparison_totalvsind.to_csv(os.path.join("euc_sim", "euc_comparison_totalvsind.csv"))
 
+		euc_sim = distance.euclidean(np.array([df_freq_periods[i]]),np.array([df_freq[j]]))
+		new_obs=pd.DataFrame({ 'Group':[i],'Work':[j],'euc_sim':[round(euc_sim,3)]})
+		euc_comparison_totalvsind= pd.concat([euc_comparison_totalvsind,new_obs], ignore_index=True)
+
+euc_comparison_totalvsind=euc_comparison_totalvsind.pivot(index='Work', columns='Group', values='euc_sim')
+
+
+euc_comparison_totalvsind.to_csv(os.path.join("euc_sim", "euc_comparison_totalvsind.csv"))
+
 
 

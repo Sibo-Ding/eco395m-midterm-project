@@ -1,10 +1,9 @@
 # eco395m-midterm-project
 
-1. Run `code/scrape_literatures.py`, output text files in `text`, each text is a work from an author.  
 
-2. Run `code/text_to_num.py`, converts each work into a list of words excluding stopwords. 
-
-3. Run `Analysis_1.py`, Converts list of words into dataframe containing all words in universe 
+1. Scrape 15 works from Gutenberd. Run `code/scrape_literatures.py`, output text files in `text`. Each text is a work from an author.  
+2. Convert texts from the previous step to vectors of word frequency (BoW). Run `code/text_to_num.py`, output 15 csv files in `words_freq`. Each csv is the word frequency of a text.  
+3. Reformat the code files via Black command.
 
 4. Run `Vector.py`, Uses each column of dataframe as an array that is compared with cosine similarity. Table are created that make visualizations of scores easier.
 

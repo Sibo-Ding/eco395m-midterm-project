@@ -1,8 +1,6 @@
 import csv
 import os
 import pandas as pd
-from sklearn.metrics.pairwise import cosine_similarity
-import numpy as np
 #Set up dataframes to add info in loops
 df_freq = pd.DataFrame({ 'word': []})
 df_total= pd.DataFrame({ 'word': []})
@@ -61,6 +59,3 @@ df_freq_periods=pd.merge(both_periods,df_shk[["word","Shakespeare"]], on='word',
 #Save as csv
 outpath=os.path.join("word_freq_tables", "df_freq_periods.csv")
 df_freq_periods.to_csv(outpath,index=False)
-
-
-
