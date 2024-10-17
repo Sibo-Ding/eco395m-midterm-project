@@ -1,0 +1,16 @@
+Work,Early,Late,Shakespeare
+Early_Ben_Jonson,0.038,0.047,0.027
+Early_Christopher_Marlowe,0.024,0.033,0.012
+Early_Edmund_Spenser,0.045,0.062,0.029
+Early_Francis_Bacon,0.077,0.098,0.045
+Early_John_Donne,0.041,0.047,0.036
+Late_Edmund_Burke,0.099,0.122,0.056
+Late_Edward_Gibbon,0.099,0.105,0.054
+Late_Fanny_Burney,0.07,0.076,0.041
+Late_Oliver_Goldsmith,0.073,0.082,0.046
+Late_Samuel_Johnson,0.065,0.079,0.038
+Shakespeare1,0.036,0.038,0.017
+Shakespeare2,0.031,0.039,0.017
+Shakespeare3,0.027,0.033,0.018
+Shakespeare4,0.035,0.046,0.019
+Shakespeare5,0.029,0.034,0.017
