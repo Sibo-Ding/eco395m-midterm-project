@@ -20,13 +20,13 @@ if __name__ == "__main__":
 
     file_names = os.listdir(INPUT_DIR)
 
-    with open(OUTPUT_FILE, 'w', newline='') as csvfile:
+    with open(OUTPUT_FILE, "w", newline="") as csvfile:
         csvwriter = csv.writer(csvfile)
         csvwriter.writerow(["Text", "Polarity", "Subjectivity"])
 
         for file_name in file_names:
             input_path = os.path.join(INPUT_DIR, file_name)
-            with open(input_path, 'r') as file:
+            with open(input_path, "r") as file:
                 text = file.read()
 
             polarity, subjectivity = analyze_sentiment(text)
