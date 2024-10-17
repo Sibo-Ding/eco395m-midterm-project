@@ -25,5 +25,5 @@ Readability scores were also run on the works. These are common metrics used in 
 
 Sentiment scores were calculated using textblob library, works were analyzed by polarity which is the emotional tone measured by values of -1 and 1. Shakespeare was balanced and later works where happier 
 	
-![image](https://github.com/user-attachments/assets/d8b7e8fa-057a-44fa-97f9-446e5157dd32)
+
 
