@@ -1,12 +1,28 @@
 # eco395m-midterm-project
 
+## Motivation
 
+## Data
+We scraped texts from Gutenberg website. We scraped 15 works in total: 5 Shakespeare works, 5 works written from 1500 to 1650, and 5 works written from 1750 to 1800.
+
+### Limitations of the data
+1. The number of texts is limited. We only scraped 15 works.
+2. We only controlled the time that works were published. Further research can focus on other aspects (e.g. genres).
+
+### Texts to numbers
+Textual data is hard to analyze. Thus, we convert texts to numbers using Bag-of-Words, following the basic logic of [Shakespeare homework](https://github.com/edkrueger/eco395m-homework-shakespeare).
+
+
+
+### Instruction to run the code
 1. Scrape 15 works from Project Gutenberd. Run `code/scrape_literatures.py`, output text files in `text`. Each text is a work from an author. 5 works from pre-Shakespeare period and 5 works from post-Shakesoeare period.
 
 2. Convert texts from the previous step to vectors of word frequency (BoW). Run `code/text_to_num.py`, output 15 csv files in `words_freq`. Each csv is the word frequency of a text.  
 
 3. Reformat the code files via Black command.
+
 4. Run `code/flesch_kincaid.py`: outputs two csv files in flesch-kincaid_results directory with flesch-kincaid analysis for each text, scoring the text by grade level and general readability
+
 5. Run `code/sentiment.py`: uses TextBlob library to analyze the sentiment of each text, scoring each by positive/negative sentiment and subjective/objective focus and outputting to a csv file in `sentiment_results` directory.
 
 4. Run `code/vector.py`, Uses each column of dataframe as an array that is compared with cosine similarity. Table are created that make visualizations of scores easier.
@@ -25,9 +41,6 @@ Readability scores were also run on the works. These are common metrics used in 
 
 Sentiment scores were calculated using textblob library, works were analyzed by polarity which is the emotional tone measured by values of -1 and 1. Shakespeare was balanced and later works where happier 
 	
-### Limitations of the data
-1. The number of texts is limited. We only scrape 15 works.
-2. We only control the time that works were published. Further research can focus on other aspects (e.g. genres).
-
 ### Limitations of the analysis
-1. We only use term frequency (Bag-of-Words) to convert textual data to numerical data.  
+1. We only used term frequency (Bag-of-Words) to convert textual data to numerical data. There are more advanced methods to convert textuald ata to numerical data.
+2. We used Python Standard Library to conduct text cleaning. We can use modern packages like `NLTK`, `spaCy`, or `Gensim` to do it more efficiently and simply.
