@@ -17,6 +17,9 @@ for i in df_freq.drop(columns=['word']).columns:
 
 
 # Pivot matrix for easier viewing
+euc_comparison.to_csv(os.path.join("euc_sim", "all_books.csv"))
+
+
 euc_matrix= euc_comparison.pivot(index='First_Work', columns='Second_Work', values='euc_sim')		
 # Seperate combinations for easier viewing 
 Books=euc_matrix.columns.tolist()
@@ -40,18 +43,19 @@ late_vs_shk_euc=euc_matrix.loc[late_list,shk_list]
 late_vs_shk_euc.to_csv(os.path.join("euc_sim", "late_vs_shk_euc.csv"))
 
 
-
+periods_group=df_freq_periods.drop(columns=['word']).columns
 #Get euclidian distance for the totals
 euc_comparison_total=pd.DataFrame({ 'First_Work': [],'Second_Work':[],'euc_sim':[]})
-for i in df_freq_periods.drop(columns=['word']).columns: 
-	for j in df_freq_periods.drop(columns=['word']).columns: 
+for i in periods_group: 
+	for j in periods_group: 
 
 		euc_sim = distance.euclidean(np.array([df_freq_periods[i]]),np.array([df_freq_periods[j]]))
 		new_obs=pd.DataFrame({ 'First_Work':[i],'Second_Work':[j],'euc_sim':[round(euc_sim,3)]})
-		euc_comparison_total= pd.concat([euc_comparison_total,new_obs], ignore_index=True)
+		euc_comparison_total= pd.concat([euc_comparison_total,new_obs])
 
 
 euc_comparison_total=euc_comparison_total.pivot(index='First_Work', columns='Second_Work', values='euc_sim')
+
 
 euc_comparison_total.to_csv(os.path.join("euc_sim", "euc_comparison_total.csv"))
 
@@ -63,10 +67,10 @@ for i in df_freq_periods.drop(columns=['word']).columns:
 		new_obs=pd.DataFrame({ 'Group':[i],'Work':[j],'euc_sim':[round(euc_sim,3)]})
 		euc_comparison_totalvsind= pd.concat([euc_comparison_totalvsind,new_obs], ignore_index=True)
 
-euc_comparison_totalvsind=euc_comparison_totalvsind.pivot(index='Work', columns='Group', values='euc_sim')
+euc_comparison_totalvsind_wide=euc_comparison_totalvsind.pivot(index='Work', columns='Group', values='euc_sim')
 
-
-euc_comparison_totalvsind.to_csv(os.path.join("euc_sim", "euc_comparison_totalvsind.csv"))
+euc_comparison_totalvsind.to_csv(os.path.join("euc_sim", "euc_comparison_totalvsind_long.csv"))
+euc_comparison_totalvsind_wide.to_csv(os.path.join("euc_sim", "euc_comparison_totalvsind.csv"))
 
 
 
